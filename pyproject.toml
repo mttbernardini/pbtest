@@ -8,6 +8,9 @@ authors = [
 dependencies = [
     "pedalboard>=0.9.6",
     "mypy>=1.10.0",
+    "pyright>=1.1.363",
+    "pytype>=2024.4.11",
+    "pyre-check>=0.9.21",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
@@ -24,3 +27,6 @@ distribution = true
 [tool.mypy]
 files = ["src/"]
 check_untyped_defs = true
+
+[tool.pytype]
+inputs = ["src/"]

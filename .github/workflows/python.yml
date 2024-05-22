@@ -1,4 +1,4 @@
-name: MyPy
+name: Type Checking
 
 on: push
 
@@ -8,6 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         python_version: ["3.10", "3.11", "3.12"]
+        type_checker: ["mypy", "pyre", "pytype", "pyright"]
     
     runs-on: ubuntu-latest
 
@@ -25,4 +26,4 @@ jobs:
         run: pdm sync -d
 
       - name: Run linting
-        run: pdm run mypy
+        run: pdm run ${{ matrix.type_checker }}
