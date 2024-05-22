@@ -1,0 +1,26 @@
+[project]
+name = "pbtest"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Matteo Bernardini", email = "matteo@teobe.net"},
+]
+dependencies = [
+    "pedalboard>=0.9.6",
+    "mypy>=1.10.0",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.mypy]
+files = ["src/"]
+check_untyped_defs = true
